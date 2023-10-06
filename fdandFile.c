@@ -23,7 +23,9 @@
 
 int main()
 {
-		FILE *fpt;  // declare FILE pointer for file handling
+
+		// declare FILE pointer for file handling
+		FILE *fpt;
 
 		// if exist all existing contenti not deleted
 		// if not, it's created
@@ -50,9 +52,39 @@ int main()
 
 
 		// reading file
+		// fgets, fgetc,fscanf, fseek, ftell, fread
+
+		FILE *fp;
+		fp = fopen("text.txt", "r");
+		char buff[100];
+
+		if (fp == NULL)
+		{
+				printf("error opening file");
+				return (1);
+		}
+
+		printf("\n%p", fp);
+
+		// reading file line by line
+		fgets(buff, sizeof(buff), fp);
+		printf("\n%s", buff);
+
+		// read single character from the file
+		int cr;
+		cr = fgetc(fp);
+		printf("%c", cr);
+
+		// read formatted input
+		int no;
+		fscanf(fp, "%d", &no);
+		printf("%d");
+
+		//
+
+
+		fclose(fp);
+
 
 		return 0;
 }
-
-
-
