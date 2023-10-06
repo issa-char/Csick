@@ -15,4 +15,13 @@
  * - Suitable for specialized tasks and interacting with non-file resources.
  */
 
+/**
+ * Approach one
+ */
+
+#include <stdio.h>
+
+FILE *ptr
+
+
 
