@@ -17,13 +17,15 @@
  * - Suitable for specialized tasks and interacting with non-file resources.
  */
 
-// Approach one
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>		// for open(), creat()
+#include <unistd.h> 	// for read(), write(), close()
 
 int main()
 {
-
+		
+		// Approach one
 		// declare FILE pointer for file handling
 		FILE *fpt;
 
@@ -72,19 +74,39 @@ int main()
 
 		// read single character from the file
 		int cr;
+
 		cr = fgetc(fp);
 		printf("%c", cr);
 
 		// read formatted input
 		int no;
+
 		fscanf(fp, "%d", &no);
 		printf("%d");
 
-		//
-
-
 		fclose(fp);
 
+
+		// Approach 2
+		// file descriptors
+		int fd; // file descriptor
+		char buffer[] = "hello world\n";
+		ssize_t B_written;
+		char buffr[1024];
+		ssize_t B_read;
+ff 77
+		fd = open("exmple.txt", O_RDONLY);	// open for reading
+		if (fd == -1)
+		{
+				perror("error opening file");
+				exit(1);
+		}
+
+		brd = read(fd, 
+
+
+
+		close(fd);
 
 		return 0;
 }
