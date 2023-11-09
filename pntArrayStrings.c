@@ -69,6 +69,21 @@ int main(void)
 		modify_char(re, ty);
 		printf("the new value of ty is: %c\n", ty);
 
+		// ARRAYS
+		printf("\n");
+		int scores[10];
+
+		scores[0] = 55;
+		scores[1] = 66;
+		scores[2] = 77;
+		scores[3] = 88;
+		scores[9] = 99;
+
+		printf("the first element in the array is %d\n", scores[0]);
+		printf("the second element in the array is %d\n", scores[1]);
+		printf("the last element in the array is %d\n", scores[9]);
+
+
 		
 
 		return(0);
