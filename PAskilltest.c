@@ -3,6 +3,8 @@
 
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
+void _puts(char *str);
+int _strlen(char *s);
 
 void reset_to_98(int *n)
 {
@@ -22,6 +24,12 @@ void swap_int(int *a, int *b)
 int _strlen(char *s)
 {
 		return strlen(s);
+}
+
+void _puts(char *str)
+{
+		puts(str);
+		puts("\n");
 }
 
 int main(void)
@@ -47,6 +55,10 @@ int main(void)
 		str = "my first strlen!";
 		len = _strlen(str);
 		printf("%d\n", len);
+
+
+		str = " I do not fear computers. I fear the lack of them - Isaac Asimov";
+		_puts(str);
 
 		return(0);
 }
