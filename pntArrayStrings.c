@@ -20,6 +20,14 @@ int mmodify_par(int *m)
 		printf("%d\n", *m);
 }
 
+void modify_char(char *i, char ff)
+{
+		printf("value of pointer i is %c\n", *i);
+		printf("value of char ff is %c\n", ff);
+		*i = 'o';
+		ff = 'h';
+}
+
 int main(void)
 {
 		int n;
@@ -30,6 +38,8 @@ int main(void)
 		int t = 30;
 		int *v = &t;
 		int x = 55;
+		char ty = 't';
+		char *re = &ty;
 
 
 		printf("the size of 'char' on my machine is %luB\n", sizeof(char));
@@ -55,6 +65,11 @@ int main(void)
 
 		mmodify_par(v);
 		printf("value t now is: %d\n", t);
+
+		modify_char(re, ty);
+		printf("the new value of ty is: %c\n", ty);
+
+		
 
 		return(0);
 }
