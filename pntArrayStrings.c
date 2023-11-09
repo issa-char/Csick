@@ -10,6 +10,16 @@
  */
 #include <stdio.h>
 
+int mmodify_par(int *m)
+{
+		printf("value of m is %p\n", m);
+		printf("value pointed to %d\n", *m);
+		printf("add of m in mem %p\n", &m);
+		*m = 402;
+
+		printf("%d\n", *m);
+}
+
 int main(void)
 {
 		int n;
@@ -19,6 +29,7 @@ int main(void)
 		int *e = &n;
 		int t = 30;
 		int *v = &t;
+		int x = 55;
 
 
 		printf("the size of 'char' on my machine is %luB\n", sizeof(char));
@@ -41,6 +52,9 @@ int main(void)
 
 		*v = 888;
 		printf("the new value of t is %d\n", t);
+
+		mmodify_par(v);
+		printf("value t now is: %d\n", t);
 
 		return(0);
 }
