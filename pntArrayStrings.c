@@ -9,7 +9,7 @@
  *  scope of variables
  */
 #include <stdio.h>
-
+#include <string.h>
 int mmodify_par(int *m)
 {
 		printf("value of m is %p\n", m);
@@ -84,7 +84,16 @@ int main(void)
 		printf("the last element in the array is %d\n", scores[9]);
 
 
-		
+		printf("the mem add of element one is %p\n", scores);
+		printf("the mem add of the first element is %p\n", &scores[0]);
+
+		// STRINGS
+		char name[] = "John";
+		printf("%s\n", name);
+		char comment[50] = "living in Gaza at the moment is quite a survival";
+		printf("%lu is the comment size in mem\n", sizeof(comment));
+		int de = strlen(name);
+		printf("%lu\n", de);
 
 		return(0);
 }
