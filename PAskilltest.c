@@ -5,6 +5,8 @@ void reset_to_98(int *n);
 void swap_int(int *a, int *b);
 void _puts(char *str);
 int _strlen(char *s);
+void print_rev(char *s);
+
 
 void reset_to_98(int *n)
 {
@@ -30,6 +32,14 @@ void _puts(char *str)
 {
 		puts(str);
 		puts("\n");
+}
+void print_rev(char *s)
+{
+		int in = strlen(s);
+		int l;
+
+		for (l - 1; l >= 0; in--)
+				printf(s[l]);
 }
 
 int main(void)

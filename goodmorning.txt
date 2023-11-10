@@ -1,0 +1,66 @@
+pointers and arrays
+
+a pointer is a variable that stores the memory address of another variable
+
+each time we declare a variable the computer reserves enough memory to store the value
+initialised. The amount of storage depends on the type of variable declared and type of 
+computer used. On most 64bit machines, char is 1B, int is 4B and float is 4B.
+
+To get the size of any identifier we use the sizeof operator. to print using printf, we use
+the %p. To get the assigned addresss we use the address-unary-operator/ampersand.
+
+-storing mem address
+pointers are variables, and like any variable they have a type associated with it during declaration
+as well as a name. the type should always be of the type the pointer is pointing to. To initialise the
+stored mem address, we use the expression "&variable" against the pointer. We also use the * sign to indicate
+that we are declaring a variable.
+
+-dereferncing
+the * is refered to us the dereferncing operator, depending on the context used: declaration or dereferncing
+it means different thing. it is what makes pointers more powerful, as we can use it to access and manipulate
+the values associated with that particular mem address. *pointer_variable results into the value stored at the 
+specified address.
+
+-function parameters are passed by value
+ parameters fed to functions in variable form are copied to the function, however this does not have any
+ external effect to the associated variable. Immediately we exist the function the variable cease to exist
+ and its influence is not felt globally. However when we pass pointers as function parameters, we have more
+ leverage on the associated pointer value, as with pointers we are capable of modifying the value at the 
+ passed memory address. This is why pointers are of improtance in C; it enables us manipulate the stored 
+ value.
+
+ -arrays
+ arrays is a continous area in memory that holds variable values of the same type. TO access these values we
+ use indexing, where the index starts from 0 and ends on the the given size minus one(size - 1).
+ since arrays are like any other data type, we need to declare, and its declaration followst must have a type
+ that conforms to elements intended to be stored in it. The array size is the number of elements that array has.
+ ( type name[size] ).
+
+ -pointers vs arrays
+ to recap, pointer is variable that stores the memory  address of another variable, while array is a contiguous
+ space in memory of a given type that holds elements of the same type and each element is accessed through
+ indexing.
+ However, it is important to note that value of an array name used in an expresssion results into a memory
+ address, specifically  as that of the first element in the array. This is due to a process refered to us as
+ array decay where the name when used in an expression is converted to pointer to element type in alll context.
+ When we use the array name as an operand of sizeof or &, then we refer to the entire array object.
+ as sizeof operand the result is the amount of space used by all its elements.
+ as & operand we will get the address of the whole array, which is the smallest bit which is same as the addr
+ of the first element.
+ using array name or &name will result tot the first mem address, however, the types are different. array name
+ is of type of the array name and size while &name is of type pointer to an array of size elements.
+
+ -pointer arithmetic
+ This is where we use mathematical notations(+) on array pointer i.e *(arrayname + 1) -> this results into
+ the second element in the array. THis is because when we use arrayname the result is the memory address
+ as the type of the array is implicitly converted to  pointer, theirfore using the pointer notation against
+ the variable name with the position of the intended element will result into  the given element value.
+ pointer arithmetic takes into account the sizes of the elements in the array to give us the next element 
+ in memory. That is to say, when we use *(arrayname + x) the arrayname memory address adds the size of the
+ next elemnet, that is computed by size not by adding the x value.
+ this too works for pointers, when you add a number thre result is pointer plus the number.`
+
+ -strings
+ arrays assist in creating characters, and we can assign the various values at the element position
+ through indexing/pointer arithmetic. creting strings from arrays require that the size is +1 greater than
+ the elements to cater for the "\0" null which every string in c must trminate with.
