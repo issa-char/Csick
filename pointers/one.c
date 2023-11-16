@@ -10,7 +10,7 @@ int main(void)
 		printf("the size of float in memory is %luB\n", sizeof(float));
 		printf("the size of double in memory is %luB\n", sizeof(double));
 		printf("the size of array in memory is %luB\n", sizeof(&arr));
-		printf("the size of a pointer variable in memory is %lu\n", sizeof(ptr));
+		printf("the size of a pointer variable in memory is %luB\n", sizeof(ptr));
 		return(0);
 }
 
