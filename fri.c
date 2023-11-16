@@ -10,11 +10,15 @@
 int main(void)
 {
 		int fd;
-		char *filename = "open.txt";
+		char *filename = "opentxt.txt";
 
 		fd = open(filename, O_RDONLY, 0);
 		if (fd == -1)
-				printf("error opening file\n");
+		{
+				fd = creat(filename, 0776);
+				if (fd == -1)
+						printf("couldn't create file");
+		}
 
 		printf("%d\n", fd);
 
