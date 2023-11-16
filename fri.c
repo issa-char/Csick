@@ -13,6 +13,8 @@ int main(void)
 		char *filename = "opentxt.txt";
 		char *content[40];
 
+		char text[30] = "reading and writting";
+
 		fd = open(filename, O_RDONLY, 0);
 		if (fd == -1)
 		{
@@ -28,6 +30,9 @@ int main(void)
 		bytes_read = read(fd, content, 20);	
 
 		printf("%s\n", content);
+
+		bytes_written = write(fd, text, 10);
+		printf("%d\n", bytes_written);
 		
 		close(fd);
 
