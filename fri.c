@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-		int fd, c, t, h;
+		int fd;
 		char *filename = "open.txt";
 
 		fd = open(filename, O_RDONLY, 0);
