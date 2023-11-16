@@ -1,11 +1,22 @@
 #include <stdio.h>
 
-int modify_var(int n)
+/**
+ * modify_var - this function does not modify n
+ * @n: a useless variable
+ *
+ * Return: nothing
+ */
+void modify_var(int n)
 {
 		n = 55;
 
 }
 
+/**
+ * main - parameter are passed by value
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
 		int d;
