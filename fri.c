@@ -13,6 +13,8 @@ int main(void)
 		char *filename = "open.txt";
 
 		fd = open(filename, O_RDONLY, 0);
+		if (fd == -1)
+				printf("error opening file\n");
 
 		printf("%d\n", fd);
 
