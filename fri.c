@@ -15,7 +15,7 @@ int main(void)
 		fd = open(filename, O_RDONLY, 0);
 		if (fd == -1)
 		{
-				fd = creat(filename, 0776);
+				fd = creat(filename, 0644);
 				if (fd == -1)
 						printf("couldn't create file");
 		}
