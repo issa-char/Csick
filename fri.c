@@ -9,8 +9,9 @@
  */
 int main(void)
 {
-		int fd;
+		int fd, bytes_written, bytes_read;
 		char *filename = "opentxt.txt";
+		char *content[40];
 
 		fd = open(filename, O_RDONLY, 0);
 		if (fd == -1)
@@ -20,9 +21,13 @@ int main(void)
 						printf("couldn't create file");
 		}
 
+
+
 		printf("%d\n", fd);
 
+		bytes_read = read(fd, content, 20);	
 
+		printf("%s\n", content);
 		
 		close(fd);
 
