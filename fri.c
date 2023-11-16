@@ -27,11 +27,16 @@ int main(void)
 
 		printf("%d\n", fd);
 
-		bytes_read = read(fd, content, 20);	
+		bytes_read = read(fd, content, 30);	
+		if (bytes_read == -1)
+				printf("error reading from file");
 
 		printf("%s\n", content);
 
 		bytes_written = write(fd, text, 10);
+		if(bytes_written = -1)
+				printf("error occured while writing to file");
+
 		printf("%d\n", bytes_written);
 		
 		close(fd);
